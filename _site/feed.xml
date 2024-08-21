@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-21T11:29:28+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Suhani’s Internship Feed</title><subtitle>I have started this blog to doucment all my learning of my internship period so that I can access it anytime, check my progress,share it and keep track.</subtitle><entry><title type="html">Ai Workshop</title><link href="http://localhost:4000/start/2024/08/16/AI-Workshop.html" rel="alternate" type="text/html" title="Ai Workshop" /><published>2024-08-16T12:50:00+05:30</published><updated>2024-08-16T12:50:00+05:30</updated><id>http://localhost:4000/start/2024/08/16/AI-Workshop</id><content type="html" xml:base="http://localhost:4000/start/2024/08/16/AI-Workshop.html"><![CDATA[]]></content><author><name></name></author><category term="Start" /><category term="hey" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Docker</title><link href="http://localhost:4000/jekyll/update/2024/08/16/Docker.html" rel="alternate" type="text/html" title="Docker" /><published>2024-08-16T11:35:59+05:30</published><updated>2024-08-16T11:35:59+05:30</updated><id>http://localhost:4000/jekyll/update/2024/08/16/Docker</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/08/16/Docker.html"><![CDATA[<p>Docker Server and Desktop Installation</p>
+
+<p>First, install the docker server using the command line. Used many command line commands don’t know exactly how but I did it.</p>
+
+<p>Docker desktop installation</p>
+
+<p>Set up Docker’s package repository. See step one of Install using the apt repository.
+Download the latest DEB package.
+Install the package with apt as follows:
+sudo apt-get update
+sudo apt-get install ./docker-desktop-<version>-<arch>.deb</arch></version></p>
+
+<p>open a terminal and run: 
+$ systemctl –user start docker-desktop
+Now the docker desktop will be automatically be enabled once you start your system.
+docker run -it <name of="" container="">
+if the container is present locally then it will run it or it will install it from hub.docker.com.</name></p>
+
+<p>docker container ls- lists all the running containers
+docker container ls -a -lists all the containers
+docker start <container name=""> - stats a container
+docker exec <container name=""> <command /> 
+ex docker exec ubuntu ls - list all the items in container ubuntu and return to home instead of the root of the container
+docker exec -it <conatiner name=""> - now the terminal will not exit out of the container
+-it stands for interactive tty
+ docker run -it -p <port number="">:<port number=""> <image name=""> - exposes the containers port to the devices port
+example - docker run -it -p 1025:1025 mailhog/mailhog</image></port></port></conatiner></container></container></p>
+
+<p>Docker file creation</p>
+
+<p>craete a file with name Dockerfile</p>
+
+<p>now add your os, software version ,dependencies and commands int the file.</p>
+
+<p>example of docker file:</p>
+
+<p>FROM ubuntu</p>
+
+<p>RUN apt-get update
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get upgrade -y
+RUN apt-get install -y nodejs</p>
+
+<p>COPY package.json package.json
+COPY package-lock.json package-lock.json
+COPY main.js main.js</p>
+
+<p>RUN npm install</p>
+
+<p>ENTRYPOINT [ “node”, “main.js” ]
+command for building - docker build -t <image name=""> .
+                                     . means to run the dockerfile in the current directory</image></p>
+
+<p>command for running - docker run -it <image name=""></image></p>
+
+<p>Pushing our local image onto docker hub</p>
+
+<p>log in to your account at hub.docker.com and create a new respository.
+now push your local docker image into hub by the commad</p>
+
+<p>docker push <image-name></image-name></p>
+
+<p>you need to be signed in your docker desktop to push.</p>
+
+<p>to login use docker login</p>
+
+<p>Docker Compose</p>
+
+<p>ypu may need to use more tha one conatiner that time you can create a dockerfile with more than one conatiner and list them under services</p>
+
+<p>docker compose up</p>
+
+<p>example:</p>
+
+<p>version: “3.8”</p>
+
+<p>services:
+  postgres:
+    image: postgres # hub.docker.com
+    ports:
+      - “5432:5432”
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: review
+      POSTGRES_PASSWORD: password</p>
+
+<p>redis:
+    image: redis
+    ports:
+      - “6379:6379”
+docker compose down</p>
+
+<p>docker compose up -d</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Docker Server and Desktop Installation]]></summary></entry><entry><title type="html">My Intenship learning</title><link href="http://localhost:4000/jekyll/update/2024/08/16/Internship.html" rel="alternate" type="text/html" title="My Intenship learning" /><published>2024-08-16T11:35:59+05:30</published><updated>2024-08-16T11:35:59+05:30</updated><id>http://localhost:4000/jekyll/update/2024/08/16/Internship</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/08/16/Internship.html"><![CDATA[<p>This is going to be my daily blog where i enter all the things I learned that day. I am a little late in starting this but better late then sorry.</p>
+
+<p>So far I started with the project Flowise AI where I understood the application, cloned it on my device and added a component in it. For it I learned React.js.</p>
+
+<p>I got to learn a lot about the system and technology via it.I could only add the font-end and was working on the back-end , learning node.js but was given a new project that’s why had to leave it.
+[15/07 - 05/08]</p>
+
+<p>Now I have started with another project inn which I am working with  Qualcomm RB3 Gen2 Development kit.</p>
+
+<p>It is a vision kit via which I have to do object detection.</p>
+
+<p>I flashed the device as it had android and we wanted Linux. I installed the requires software than ran the Qualcomm’s inbuilt object detection model</p>
+
+<p>Now I have to create an docker container and run it on Kubernetes . The container will contain an object detection model.
+[06/08 - present]</p>
+
+<p>Things For me to Learn</p>
+
+<ul>
+  <li>Linux</li>
+  <li>Docker</li>
+  <li>Kubernetes</li>
+  <li>transformers</li>
+  <li>PyTorch</li>
+  <li>Deep learning</li>
+  <li>Python resnet50</li>
+  <li>Triton server: load model</li>
+</ul>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[This is going to be my daily blog where i enter all the things I learned that day. I am a little late in starting this but better late then sorry.]]></summary></entry><entry><title type="html">Jkyll</title><link href="http://localhost:4000/jekyll/update/2024/08/16/Jkyll.html" rel="alternate" type="text/html" title="Jkyll" /><published>2024-08-16T11:35:59+05:30</published><updated>2024-08-16T11:35:59+05:30</updated><id>http://localhost:4000/jekyll/update/2024/08/16/Jkyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/08/16/Jkyll.html"><![CDATA[]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Linux</title><link href="http://localhost:4000/jekyll/update/2024/08/16/Linux.html" rel="alternate" type="text/html" title="Linux" /><published>2024-08-16T11:35:59+05:30</published><updated>2024-08-16T11:35:59+05:30</updated><id>http://localhost:4000/jekyll/update/2024/08/16/Linux</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/08/16/Linux.html"><![CDATA[<p>Linux</p>
+
+<p>So firstly i installed Ubuntu 22.04 desktop on my laptop and made it a dual boot.</p>
+
+<p>Now i have windows and linux both in my system.</p>
+
+<p>Terminal</p>
+
+<p>I am learning how to use the terminal as it is quiet important.</p>
+
+<p>I am learning it from a course Satya sir gave me which is:</p>
+
+<p>Course: The missing semester of your CS education</p>
+
+<p>Topic 1: The Shell</p>
+
+<p>Shell commands:</p>
+
+<p>date - tells the current date</p>
+
+<p>ls - lists the items in that directory</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   you can also add filters and options like
+
+   ls -l for listing all the items with their full detail
+
+   ls -r listing in reverse order
+
+   ls -t listing according to time
+
+   ls -ltr combining all these parameters
+</code></pre></div></div>
+
+<p>cd - change directory ex cd /opt</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    cd ~ sends to home directory
+
+    cd / - sends to root directory
+</code></pre></div></div>
+
+<p>echo  - simply prints out its arguments</p>
+
+<p>which - find out which file is executed for a given program</p>
+
+<p>pwd - print working directory</p>
+
+<p>cat - display content of the file</p>
+
+<p>cp - copy</p>
+
+<p>mv - move one file from one place to another or rename it</p>
+
+<p>mv [source_file_name(s)] [Destination_file_name]
+mv geeksforgeeks /home/jayeshkumar/jkj/ 
+mkdir - make directory</p>
+
+<p>man - manual</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      ex mam man, ls man
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>take output</li>
+  </ul>
+</blockquote>
+
+<p>&lt; - take input</p>
+
+<p>echo hello &gt; hello.txt
+missing:~$ cat hello.txt
+hello
+missing:~$ cat &lt; hello.txt
+hello
+missing:~$ cat &lt; hello.txt &gt; hello2.txt
+missing:~$ cat hello2.txt
+hello</p>
+<blockquote>
+  <blockquote>
+    <ul>
+      <li>to append to a file</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<table>
+  <tbody>
+    <tr>
+      <td>- create a pipeline ex</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>s -l / | tail -n1
+sudo su  - superuser, can make changes in root</p>
+
+<p>tee - to both display and save output</p>
+
+<p>echo 3 | sudo tee brightness
+vim - for writing scripts in linux
+ exit in vim using :qm
+Source - for sourcing that script in our terminal
+= - you can assign value to any string
+    for ex foo=”hello”
+    echo $foo it will print hello
+“” - it will cosider the argument insdie it
+‘’ - print the string inside it as it is without cosnidering any other command</p>
+
+<p>foo=bar
+echo “$foo”</p>
+<h1 id="prints-bar">prints bar</h1>
+<p>echo ‘$foo’</p>
+<h1 id="prints-foo">prints $foo</h1>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Linux]]></summary></entry><entry><title type="html">React</title><link href="http://localhost:4000/jekyll/update/2024/08/16/React.html" rel="alternate" type="text/html" title="React" /><published>2024-08-16T11:35:59+05:30</published><updated>2024-08-16T11:35:59+05:30</updated><id>http://localhost:4000/jekyll/update/2024/08/16/React</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/08/16/React.html"><![CDATA[]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry></feed>
